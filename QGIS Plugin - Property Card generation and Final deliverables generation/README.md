@@ -1,4 +1,5 @@
 # 🏡 SVAMITVA QGIS Plugin
+# 🏡 Project SVAMITVA | QGIS Plugin | Region Andhra Pradesh
 
 ![SVAMITVA Logo](https://img.shields.io/badge/Project-SVAMITVA-blue?style=flat-square) ![QGIS Plugin](https://img.shields.io/badge/Platform-QGIS-green?style=flat-square) ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
 
