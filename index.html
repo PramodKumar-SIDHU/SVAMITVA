@@ -12,8 +12,8 @@
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: #f5f8fa;
-      color: #333;
+      background: #f9f9f9;
+      color: #222;
       line-height: 1.6;
     }
 
@@ -23,7 +23,7 @@
       top: 0;
       left: 0;
       right: 0;
-      background: #003366;
+      background: #FF9933; /* Saffron */
       color: #fff;
       padding: 15px 40px;
       display: flex;
@@ -44,7 +44,7 @@
     }
 
     h2 {
-      color: #003366;
+      color: #138808; /* Green */
       margin-bottom: 10px;
     }
 
@@ -67,15 +67,15 @@
     }
     ul li::before {
       content: "✔ ";
-      color: #0066cc;
+      color: #138808;
       font-weight: bold;
     }
 
-    /* Section divider */
+    /* Divider */
     hr {
       border: none;
       height: 2px;
-      background: linear-gradient(to right, transparent, #0066cc, transparent);
+      background: linear-gradient(to right, transparent, #222, transparent);
       margin: 40px 0;
     }
 
@@ -89,18 +89,19 @@
       font-size: 1rem;
       font-weight: bold;
       color: #fff;
-      background: #0066cc;
+      background: #000;
       border-radius: 8px;
       text-decoration: none;
       transition: 0.3s;
     }
     .button:hover {
-      background: #004c99;
+      background: #333;
     }
     .button img {
       width: 20px;
       height: 20px;
       margin-right: 8px;
+      filter: invert(1); /* white GitHub logo */
     }
 
     /* Fade-in animation */
