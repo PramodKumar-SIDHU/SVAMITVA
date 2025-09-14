@@ -12,6 +12,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
+
     body {
       font-family: 'Roboto', sans-serif;
       background: #fdfdfd;
@@ -20,6 +21,7 @@
       overflow-x: hidden;
     }
 
+    /* Header */
     header {
       position: fixed;
       top: 0; left: 0;
@@ -33,11 +35,17 @@
       z-index: 1000;
       transition: all 0.4s ease;
     }
-    header img { height: 45px; margin-right: 12px; }
+    header .left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    header img { height: 45px; }
     header h1 {
       font-size: 1.1rem;
       font-family: 'Poppins', sans-serif;
       color: #138808;
+      margin: 0;
     }
 
     /* Hero Section */
