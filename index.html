@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
 
   <style>
-    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -24,20 +23,19 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%;
-      background: rgba(0,0,0,0.7);
+      background: #fff;
+      border-bottom: 2px solid #FF9933;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 40px;
       z-index: 1000;
     }
-    header img {
-      height: 50px;
-    }
+    header img { height: 50px; }
     header h1 {
       font-size: 1.2rem;
       font-family: 'Poppins', sans-serif;
-      color: #fff;
+      color: #138808;
     }
 
     /* Hero Section */
@@ -50,78 +48,83 @@
       align-items: center;
       text-align: center;
       color: #fff;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      animation: fadeInDown 2s ease forwards;
     }
     .hero h1 {
       font-size: 3.5rem;
       margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
       color: #FF9933; /* Saffron */
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+      text-shadow: 0 3px 10px rgba(0,0,0,0.5);
     }
     .hero h2 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: #138808; /* Green */
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
     }
 
-    /* Container */
-    .container {
+    /* Section Container */
+    .section {
       max-width: 1100px;
       margin: auto;
       padding: 80px 20px;
     }
 
-    h2 {
+    .section h2 {
       font-family: 'Poppins', sans-serif;
-      margin-bottom: 15px;
-      font-size: 1.8rem;
-      border-left: 8px solid #FF9933;
-      padding-left: 10px;
+      font-size: 2rem;
+      margin-bottom: 20px;
       color: #222;
+      position: relative;
     }
-    h2 span {
-      color: #138808;
+    .section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #FF9933, #138808);
+      margin-top: 8px;
+      border-radius: 2px;
     }
 
-    /* Cards */
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 30px;
-      margin: 30px 0;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    /* Modern Info Panels */
+    .info {
+      background: rgba(255, 255, 255, 0.9);
+      border-left: 6px solid #FF9933;
+      border-radius: 10px;
+      padding: 25px;
+      margin: 25px 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
       opacity: 0;
       transform: translateY(50px);
       transition: all 0.7s ease-out;
     }
-    .card.visible {
+    .info.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+    ul { list-style: none; padding: 0; }
     ul li::before {
       content: "✔ ";
       color: #138808;
       font-weight: bold;
     }
 
-    /* GitHub Button */
+    /* Contact / Thanks */
+    .thanks {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(90deg, #FF9933, #fff, #138808);
+      color: #000;
+    }
+    .thanks h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .thanks p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
     .button {
       display: inline-flex;
       align-items: center;
@@ -130,23 +133,17 @@
       font-size: 1rem;
       font-weight: bold;
       color: #fff;
-      background: linear-gradient(90deg, #FF9933, #000, #138808);
+      background: #000;
       border-radius: 8px;
       text-decoration: none;
       transition: 0.3s;
     }
-    .button:hover { opacity: 0.9; }
+    .button:hover { background: #333; }
     .button img {
       width: 20px;
       height: 20px;
       margin-right: 10px;
       filter: invert(1);
-    }
-
-    /* Animations */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -157,23 +154,24 @@
     <img src="https://svamitva.nic.in/svamitva/resources/themes/edutheme/images/mopr-logo.png" alt="Panchayat Raj Logo">
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>🏡 Project SVAMITVA</h1>
-      <h2>Drone-based Mapping & Property Rights in Andhra Pradesh</h2>
-    </div>
+    <h1>🏡 Project SVAMITVA</h1>
+    <h2>Drone-based Mapping & Property Rights in Andhra Pradesh</h2>
   </section>
 
-  <!-- Content -->
-  <div class="container">
-    <div class="card">
-      <h2>📌 <span>Overview</span></h2>
-      <p><b>SVAMITVA</b> is a central-sector scheme launched on <b>24th April 2020</b> by Hon’ble PM Shri Narendra Modi to modernize rural property management using <b>drone-based surveys</b> and provide <b>Ownership Certificates</b>. Andhra Pradesh implements it as the <b>AP Resurvey Project</b>.</p>
+  <!-- Overview -->
+  <div class="section">
+    <h2>📌 Overview</h2>
+    <div class="info">
+      <p><b>SVAMITVA</b> is a flagship scheme launched on <b>24th April 2020</b> by Hon’ble Prime Minister Shri Narendra Modi to modernize rural property management using <b>drone-based surveys</b>. In Andhra Pradesh, it is implemented as the <b>AP Resurvey Project</b> to provide <b>legal Ownership Certificates</b>.</p>
     </div>
+  </div>
 
-    <div class="card">
-      <h2>🎯 <span>Objectives</span></h2>
+  <!-- Objectives -->
+  <div class="section">
+    <h2>🎯 Objectives</h2>
+    <div class="info">
       <ul>
         <li>Create accurate property records</li>
         <li>Issue property cards to rural households</li>
@@ -181,45 +179,57 @@
         <li>Enable access to institutional credit</li>
       </ul>
     </div>
+  </div>
 
-    <div class="card">
-      <h2>🛠️ <span>Implementation</span></h2>
+  <!-- Implementation -->
+  <div class="section">
+    <h2>🛠️ Implementation</h2>
+    <div class="info">
       <ul>
         <li>Drone-based surveys in Grama Kantams</li>
         <li>Preparation of Record of Rights (RoR)</li>
-        <li>Issuance of legal ownership certificates</li>
-        <li>Joint effort of Revenue, Panchayati Raj & Survey of India</li>
+        <li>Issuance of legal property certificates</li>
+        <li>Joint effort of Revenue Dept, Panchayati Raj & Survey of India</li>
       </ul>
     </div>
+  </div>
 
-    <div class="card">
-      <h2>🌟 <span>Benefits</span></h2>
+  <!-- Benefits -->
+  <div class="section">
+    <h2>🌟 Benefits</h2>
+    <div class="info">
       <ul>
         <li>Proof of ownership for rural households</li>
-        <li>Collateral for loans & economic growth</li>
-        <li>Better village planning with digital maps</li>
+        <li>Collateral for loans & financial empowerment</li>
+        <li>Better planning with digital property maps</li>
         <li>Transparency & improved governance</li>
       </ul>
     </div>
+  </div>
 
+  <!-- Thanks & Contact -->
+  <div class="thanks">
+    <h2>🙏 Thank You</h2>
+    <p>This page is dedicated to <b>Project SVAMITVA in Andhra Pradesh</b>, aiming to empower rural citizens with technology-driven land governance.</p>
+    <p>For more details and project resources, visit the GitHub page below:</p>
     <a href="https://github.com/PramodKumar-SIDHU/SVAMITVA" target="_blank" class="button">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"> View Project on GitHub
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"> GitHub Project Page
     </a>
   </div>
 
   <!-- Scroll Animation -->
   <script>
-    const cards = document.querySelectorAll('.card');
-    const revealCards = () => {
-      cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
+    const infos = document.querySelectorAll('.info');
+    const reveal = () => {
+      infos.forEach(info => {
+        const rect = info.getBoundingClientRect();
         if (rect.top < window.innerHeight - 100) {
-          card.classList.add('visible');
+          info.classList.add('visible');
         }
       });
     };
-    window.addEventListener('scroll', revealCards);
-    revealCards();
+    window.addEventListener('scroll', reveal);
+    reveal();
   </script>
 </body>
 </html>
