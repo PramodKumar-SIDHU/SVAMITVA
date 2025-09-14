@@ -1,7 +1,8 @@
-# 🏡 SVAMITVA QGIS Plugin
-# 🏡 Project SVAMITVA | QGIS Plugin | Region Andhra Pradesh
+# 🏡 Project SVAMITVA | QGIS Plugin | Andhra Pradesh
 
 ![SVAMITVA Logo](https://img.shields.io/badge/Project-SVAMITVA-blue?style=flat-square) ![QGIS Plugin](https://img.shields.io/badge/Platform-QGIS-green?style=flat-square) ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
+
+# 🏡 SVAMITVA QGIS Plugin
 
 ---
 
@@ -20,40 +21,39 @@ This tool ensures **accurate, standardized, and official outputs** for rural pro
 
 This plugin simplifies the SVAMITVA workflow by:  
 
-- ✅ Generating **Property Cards** for surveyed households  
-- ✅ Producing **Final Deliverable Maps**, including:  
-  - Village Habitation Traverse Map  
-  - Correlation Map  
-  - Property Parcel Map  
-  - Grama Kantam Map (old & extended boundaries)  
+- 🪪 Generating **Property Cards** for surveyed households  
+- 🔰 Producing **Final Deliverable Maps**, including:  
+  - 🏘️ **Village Habitation Traverse Map**  
+  - 🔗 **Correlation Map**  
+  - 📐 **Property Parcel Map**    
+  - 🗺️ **Grama Kantam Map** (old & extended boundaries)  
 
-### Input Data Required
+### 📝 Input Data Required
 
 - Final parcel area & built-up area **shapefiles**  
 - Final **RoR data**  
-- ORI soft copy in **QGIS-compatible format**  
 - Folder containing **owner photos**, named by Parcel number  
 
 ---
 
 ## ✨ Features
 
-- Automated **Property Card generation**  
-- Generates **Village Habitation Traverse Map**  
-- Generates **Correlation Map**  
-- Generates **Property Parcel Map**  
-- Generates **Grama Kantam Map** with old & extended boundaries  
-- Supports **integration of RoR data & owner photos**  
-- User-friendly **interface for survey officials**  
+- 🪪 Automated **Property Card generation**  
+- 🏘️ Generates **Village Habitation Traverse Map**  
+- 🔗 Generates **Correlation Map**  
+- 📐 Generates **Property Parcel Map**  
+- 🗺️ Generates **Grama Kantam Map** with old & extended boundaries  
+- 📑 Supports **integration of RoR data & owner photos**  
+- 🎛️ User-friendly **interface for officials**  
 
 ---
 
 ## 🚀 Benefits
 
-- Ensures **accuracy & consistency** in property documentation  
-- Saves **time and reduces manual errors**  
-- Provides **officially ready maps and property cards**  
-- Supports **financial empowerment** of rural property owners  
+- ✅ Ensures **accuracy & consistency** in property documentation  
+- ✅ Saves **time and reduces manual errors**  
+- ✅ Provides **officially ready maps and property cards**  
+- ✅ Supports **financial empowerment** of rural property owners  
 
 ---
 
@@ -66,8 +66,8 @@ This plugin is a tool for the **Andhra Pradesh Panchayat Raj Department**, aidin
 ## ⚙️ Installation & Usage
 
 > Instructions for installing the plugin and integrating user data will be provided here.  
-> Users can load final shapefiles, RoR data, ORI soft copies, and owner photos into QGIS and generate property cards and maps with a few clicks.
+> Users can load final shapefiles, RoR data and owner photos into QGIS and generate property cards and maps with a few clicks.
 
 ---
 
-![QGIS](https://img.shields.io/badge/QGIS-Plugin-blue?style=flat-square) ![SVAMITVA](https://img.shields.io/badge/Project-SVAMITVA-lightgrey?style=flat-square) ![Andhra Pradesh](https://img.shields.io/badge/Region-Andhra%20Pradesh-orange?style=flat-square)
+![Project SVAMITVA](https://img.shields.io/badge/Project-SVAMITVA-FF9933?style=flat-square&logo=appveyor) ![QGIS Plugin](https://img.shields.io/badge/QGIS-Plugin-FFFFFF?style=flat-square&logo=qgis&logoColor=000000) ![Region Andhra Pradesh](https://img.shields.io/badge/Region-AndhraPradesh-138808?style=flat-square&logo=ge)  
