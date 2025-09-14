@@ -28,14 +28,24 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 40px;
+      padding: 10px 30px;
       z-index: 1000;
     }
-    header img { height: 50px; }
+    header .left {
+      display: flex;
+      align-items: center;
+    }
+    header img {
+      height: 50px;
+      margin-right: 15px;
+    }
     header h1 {
       font-size: 1.2rem;
       font-family: 'Poppins', sans-serif;
       color: #138808;
+    }
+    header .right img {
+      height: 55px;
     }
 
     /* Hero Section */
@@ -58,14 +68,15 @@
     }
     .hero h2 {
       font-size: 1.6rem;
-      color: #f6faf6; /* White */
+      color: #fff;
       text-shadow: 0 2px 6px rgba(0,0,0,0.5);
     }
     .hero h3 {
       font-size: 1.6rem;
-      color: #15ff00; /* Green */
+      color: #138808; /* Green */
       text-shadow: 0 2px 6px rgba(0,0,0,0.5);
     }
+
     /* Section Container */
     .section {
       max-width: 1100px;
@@ -92,7 +103,7 @@
 
     /* Modern Info Panels */
     .info {
-      background: rgba(255, 255, 255, 0.9);
+      background: #fff;
       border-left: 6px solid #FF9933;
       border-radius: 10px;
       padding: 25px;
@@ -106,7 +117,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-
     ul { list-style: none; padding: 0; }
     ul li::before {
       content: "✔ ";
@@ -114,7 +124,21 @@
       font-weight: bold;
     }
 
-    /* Contact / Thanks */
+    /* QGIS Plugin Section */
+    .plugin {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 40px 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .plugin h3 {
+      font-family: 'Poppins', sans-serif;
+      margin-top: 20px;
+      color: #FF9933;
+    }
+
+    /* Thanks */
     .thanks {
       text-align: center;
       padding: 60px 20px;
@@ -125,43 +149,53 @@
       font-size: 2rem;
       margin-bottom: 20px;
     }
-    .thanks p {
-      font-size: 1rem;
-      margin-bottom: 15px;
-    }
-    .button {
-      display: inline-flex;
+
+    /* Recommended Links Section */
+    .links {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      margin-top: 20px;
-      padding: 14px 28px;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #fff;
-      background: #000;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
+      padding: 60px 20px;
+      background: #f1f1f1;
     }
-    .button:hover { background: #333; }
-    .button img {
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-      filter: invert(1);
+    .links .left {
+      flex: 1;
+    }
+    .links .left a {
+      display: block;
+      margin: 10px 0;
+      font-size: 1rem;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .links .left a:hover { text-decoration: underline; }
+    .links .right {
+      flex: 1;
+      text-align: right;
+    }
+    .links .right img {
+      max-width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <h1>SVAMITVA - Andhra Pradesh</h1>
-    <img src="https://svamitva.nic.in/svamitva/resources/themes/edutheme/images/mopr-logo.png" alt="Panchayat Raj Logo">
+    <div class="left">
+      <img src="https://svamitva.nic.in/svamitva/resources/themes/edutheme/images/mopr-logo.png" alt="Panchayat Raj Logo">
+      <h1>SVAMITVA - Andhra Pradesh</h1>
+    </div>
+    <div class="right">
+      <img src="https://bhunaksha.ap.gov.in/bhunakshalpm/assets/Home/images/apseal-trans.png" alt="Andhra Pradesh Logo">
+    </div>
   </header>
 
   <!-- Hero -->
   <section class="hero">
     <h1>SVAMITVA</h1>
-    <h2>Survey of Villages Abadi and Mapping with Improvised Technology in Village Areas<h2>
+    <h2>Survey of Villages Abadi and Mapping with Improvised Technology in Village Areas</h2>
     <h3>Drone-based Mapping & Property Rights in Andhra Pradesh</h3>
   </section>
 
@@ -212,14 +246,45 @@
     </div>
   </div>
 
-  <!-- Thanks & Contact -->
+  <!-- QGIS Plugin -->
+  <div class="section plugin">
+    <h2>🏡 SVAMITVA QGIS Plugin</h2>
+    <p>The SVAMITVA QGIS Plugin empowers surveyors and Panchayat Raj officials to generate <b>Property Cards</b> and <b>Final Deliverable Maps</b> efficiently after survey and RoR processes.</p>
+    <h3>🎯 Purpose</h3>
+    <ul>
+      <li>Automated Property Card generation</li>
+      <li>Village Habitation Traverse Map</li>
+      <li>Correlation Map</li>
+      <li>Property Parcel Map</li>
+      <li>Grama Kantam Map (old & extended boundaries)</li>
+    </ul>
+    <h3>✨ Features</h3>
+    <ul>
+      <li>Integrates RoR data & owner photos</li>
+      <li>Ensures official ready-to-use outputs</li>
+      <li>Reduces manual errors & saves time</li>
+    </ul>
+    <h3>📂 Official Use</h3>
+    <p>This plugin is a tool for the Andhra Pradesh Panchayat Raj Department, aiding in modernizing rural property mapping and administration under the SVAMITVA initiative.</p>
+  </div>
+
+  <!-- Thanks -->
   <div class="thanks">
     <h2>🙏 Thank You</h2>
     <p>This page is dedicated to <b>Project SVAMITVA in Andhra Pradesh</b>, aiming to empower rural citizens with technology-driven land governance.</p>
-    <p>For more details and project resources, visit the GitHub page below:</p>
-    <a href="https://github.com/PramodKumar-SIDHU/SVAMITVA" target="_blank" class="button">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"> GitHub Project Page
-    </a>
+  </div>
+
+  <!-- Recommended Links -->
+  <div class="links">
+    <div class="left">
+      <h3>🔗 Recommended Links</h3>
+      <a href="https://svamitva.nic.in/svamitva/" target="_blank">Central SVAMITVA Portal</a>
+      <a href="https://github.com/PramodKumar-SIDHU/SVAMITVA" target="_blank">GitHub Project Page</a>
+      <a href="https://youtube.com/@svamitvamithraap?feature=shared" target="_blank">SVAMITVA MITRA AP - YouTube Channel</a>
+    </div>
+    <div class="right">
+      <img src="background3.png" alt="SVAMITVA Background">
+    </div>
   </div>
 
   <!-- Scroll Animation -->
