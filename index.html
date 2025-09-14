@@ -1,40 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>SVAMITVA QGIS Plugin</title>
+  <meta charset="UTF-8">
+  <title>🏡 Project SVAMITVA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
-    h1 { color: #2c3e50; }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-      max-width: 800px;
-      margin: auto;
+    /* Futuristic background */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+
+    /* Neon glow containers */
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00f2ff;
+      text-shadow: 0px 0px 10px rgba(0,242,255,0.7);
+    }
+
+    p, li {
+      font-size: 1.1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "✦ ";
+      color: #ffcc00;
+    }
+
+    /* Cards with futuristic border */
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0,242,255,0.3);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 25px 0;
+      box-shadow: 0 0 20px rgba(0,242,255,0.2);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(0,242,255,0.5);
+    }
+
+    /* Section dividers */
+    hr {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #00f2ff, transparent);
+      margin: 40px 0;
+    }
+
+    /* Header badges */
+    .badges img {
+      margin: 5px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.4);
+      transition: transform 0.3s;
+    }
+    .badges img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Futuristic glowing button */
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(45deg, #00f2ff, #0066ff);
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(0,242,255,0.6);
+      transition: 0.3s;
+    }
+    .button:hover {
+      background: linear-gradient(45deg, #ff0066, #ffcc00);
+      box-shadow: 0 0 25px rgba(255,0,102,0.8);
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>SVAMITVA QGIS Plugin</h1>
-    <p>
-      This QGIS plugin generates property cards and final deliverables
-      under the <b>SVAMITVA project</b>. It automates:
-    </p>
-    <ul>
-      <li>Property card generation</li>
-      <li>Village Habitation Traverse Map</li>
-      <li>Correlation Map</li>
-      <li>Property Parcel Map</li>
-      <li>Grama Kantam Map (with old boundary)</li>
-    </ul>
-    <p>
-      👉 View the source code on <a href="https://github.com/PramodKumar-SIDHU/SVAMITVA">GitHub</a>.
-    </p>
+  <div class="container fade-in">
+    <h1>🏡 Project SVAMITVA</h1>
+    <div class="badges">
+      <img src="https://img.shields.io/badge/Project-SVAMITVA-FF9933?style=flat-square" alt="Project SVAMITVA">
+      <img src="https://img.shields.io/badge/Region-AndhraPradesh-FFFFFF?style=flat-square&logoColor=000000" alt="Region AP">
+      <img src="https://img.shields.io/badge/Status-Active-138808?style=flat-square" alt="Status Active">
+    </div>
+
+    <hr>
+
+    <div class="card">
+      <h2>📌 Overview</h2>
+      <p><b>SVAMITVA</b> stands for <b>Survey of Villages Abadi and Mapping with Improvised Technologies in Village Areas</b>.</p>
+      <p>Launched by the Hon’ble Prime Minister on <b>24th April 2020</b>, this initiative aims to <b>modernize rural property management</b> in India.</p>
+      <p>The project conducts <b>comprehensive surveys</b> of rural habitations using <b>drone technology</b>, providing an <b>integrated property solution</b> with <b>Ownership Certificates</b> for property owners.</p>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Objectives</h2>
+      <ul>
+        <li>Conduct <b>accurate surveys</b> of all rural habitations in Andhra Pradesh</li>
+        <li>Prepare the <b>Record of Rights (RoR)</b> for <b>non-agricultural properties</b></li>
+        <li>Enable rural property owners to <b>leverage property as financial assets</b></li>
+        <li>Support <b>digital mapping and administrative planning</b></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🛠️ Implementation</h2>
+      <ul>
+        <li><b>Drone-based mapping technologies</b> ensure precision</li>
+        <li><b>Grama Kantam lands</b> and non-agricultural lands are mapped</li>
+        <li>Ownership Certificates issued integrating <b>survey data, RoR, and property documentation</b></li>
+        <li>Guidelines under <b>AP Resurvey Project / SVAMITVA</b> strictly followed</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🌟 Benefits</h2>
+      <ul>
+        <li>Provides <b>official ownership proof</b> to rural households</li>
+        <li>Enables properties to be used as <b>financial assets</b></li>
+        <li>Creates <b>accurate digital maps</b> for governance</li>
+        <li>Promotes <b>transparency and modern administration</b></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>📍 Coverage</h2>
+      <p>Focused on <b>rural Andhra Pradesh</b>, covering <b>all households and properties</b> in Grama Kantams / Abadi.</p>
+      <p>Part of a <b>national initiative</b> to digitally map rural India and streamline property management.</p>
+    </div>
+
+    <a href="https://github.com/PramodKumar-SIDHU/SVAMITVA" class="button">🚀 View Source Code on GitHub</a>
   </div>
 </body>
 </html>
