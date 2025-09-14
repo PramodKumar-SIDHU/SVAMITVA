@@ -2,196 +2,358 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>SVAMITVA - Andhra Pradesh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project SVAMITVA</title>
+
+  <!-- Google Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300;400;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
     body {
-      margin: 0;
       font-family: 'Roboto', sans-serif;
-      color: #fff;
-      background: #0a0a0a;
+      background: #fdfdfd;
+      color: #222;
+      line-height: 1.6;
       overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: #fff;
+      border-bottom: 2px solid #FF9933;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 25px;
+      z-index: 1000;
+      transition: all 0.4s ease;
+    }
+    header img { height: 45px; margin-right: 12px; }
+    header h1 {
+      font-size: 1.1rem;
+      font-family: 'Poppins', sans-serif;
+      color: #138808;
     }
 
     /* Hero Section */
     .hero {
-      background: url("background1.png") no-repeat center center/cover;
       height: 100vh;
+      background: url("background1.png") no-repeat center center/cover;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      flex-direction: column;
-      color: white;
+      color: #fff;
+      padding: 0 10px;
+      animation: heroFade 2s ease-in-out forwards;
     }
-
     .hero h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 4em;
-      background: linear-gradient(90deg, #FF9933, #FFFFFF, #138808);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      color: #e0e0e0;
-      animation: fadeIn 3s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Section styling */
-    section {
-      padding: 80px 12%;
-      text-align: center;
-    }
-
-    section h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.2em;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg, #FF9933, #138808);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    section p, section li {
-      font-size: 1.1em;
-      line-height: 1.8;
-      color: #f1f1f1;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li::before {
-      content: "✔ ";
+      font-size: 3.2rem;
+      margin-bottom: 8px;
+      font-family: 'Poppins', sans-serif;
       color: #FF9933;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+      transform: scale(0.9);
+      animation: scaleUp 1.2s ease forwards;
+    }
+    .hero h2, .hero h3 {
+      font-size: 1.4rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 1s;
+    }
+    .hero h3 { color: #138808; }
+
+    @keyframes heroFade { from {opacity:0;} to{opacity:1;} }
+    @keyframes scaleUp { from {transform: scale(0.9);} to{transform: scale(1);} }
+    @keyframes fadeIn { to {opacity:1;} }
+
+    /* Sections */
+    .section {
+      max-width: 1050px;
+      margin: auto;
+      padding: 40px 18px;
+    }
+    .section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      color: #222;
+      text-align: center;
+      position: relative;
+    }
+    .section h2::after {
+      content: "";
+      display: block;
+      width: 55px;
+      height: 3px;
+      background: linear-gradient(90deg, #FF9933, #138808);
+      margin: 5px auto;
+      border-radius: 2px;
+    }
+
+    /* Grid Layout for Info Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 20px;
+    }
+
+    /* Info Panels */
+    .info {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 26px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+      transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+      cursor: default;
+    }
+    .info.visible { opacity: 1; transform: translateY(0) scale(1); }
+    .info:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 28px rgba(0,0,0,0.14); }
+
+    ul { list-style: none; padding: 0; }
+    ul li { margin: 6px 0; font-size: 0.95rem; }
+    ul li::before {
+      content: "✔ ";
+      color: #138808;
       font-weight: bold;
     }
 
-    /* Contact Section */
-    .contact {
-      background: linear-gradient(135deg, #FF9933, #138808);
-      padding: 60px 12%;
+    /* Plugin Section */
+    .plugin {
+      background: #fff;
+      border-radius: 12px;
+      padding: 35px;
+      margin: 50px auto;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(40px) scale(0.97);
+      transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .plugin.visible { opacity:1; transform: translateY(0) scale(1); }
+    .plugin h3 {
+      font-family: 'Poppins', sans-serif;
+      margin-top: 15px;
+      color: #FF9933;
+      font-size: 1.1rem;
+    }
+
+    /* Final Section (Thanks + Links) */
+    .final-section {
+      background: url("background3.png") no-repeat center/cover;
+      padding: 60px 20px 50px;
       text-align: center;
       color: #000;
+      animation: fadeIn 1.2s ease forwards;
+    }
+    .thanks-card {
+      background: rgba(255,255,255,0.8);
+      padding: 32px;
+      border-radius: 16px;
+      max-width: 750px;
+      margin: auto;
+      margin-bottom: 25px;
+      transform: scale(0.95);
+      opacity: 0;
+      transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .thanks-card.visible { opacity:1; transform: scale(1); }
+    .thanks-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
     }
 
-    .buttons {
-      margin-top: 20px;
+    /* Links Section */
+    .links h3 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      font-family: 'Poppins', sans-serif;
+      color: #222;
+    }
+    .links .btns {
       display: flex;
       justify-content: center;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 12px;
     }
-
-    .btn {
+    .links a {
       display: flex;
       align-items: center;
-      gap: 10px;
-      background: #000;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 8px;
+      gap: 7px;
+      padding: 12px 22px;
+      font-size: 0.95rem;
+      color: #fff;
+      border-radius: 30px;
       text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
+      font-weight: 600;
+      transition: all 0.3s ease;
     }
-
-    .btn:hover {
-      background: #333;
+    .links a:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
-
-    .btn svg {
-      width: 20px;
-      height: 20px;
-      fill: #FF9933;
-    }
+    .links a.github { background:#000; }
+    .links a.youtube { background:#FF0000; }
+    .links a.portal { background:#0A66C2; }
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1>🏡 Project SVAMITVA</h1>
-    <p>Survey of Villages Abadi and Mapping with Improvised Technologies in Village Areas</p>
+  <!-- Header -->
+  <header>
+    <div class="left">
+      <img src="https://svamitva.nic.in/svamitva/resources/themes/edutheme/images/mopr-logo.png" alt="Panchayat Raj Logo">
+      <h1>SVAMITVA - Andhra Pradesh</h1>
+    </div>
+    <div class="right">
+      <img src="https://bhunaksha.ap.gov.in/bhunakshalpm/assets/Home/images/apseal-trans.png" alt="Andhra Pradesh Logo">
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>SVAMITVA</h1>
+    <h2>Survey of Villages Abadi and Mapping with Improvised Technology in Village Areas</h2>
+    <h3>Drone-based Mapping & Property Rights in Andhra Pradesh</h3>
+  </section>
+
+  <!-- Overview + Objectives -->
+  <div class="section">
+    <div class="grid">
+      <div class="info">
+        <h2>📌 Overview</h2>
+        <p><b>SVAMITVA</b> is a flagship scheme launched on <b>24th April 2020</b> by Hon’ble Prime Minister Shri Narendra Modi to modernize rural property management using <b>drone-based surveys</b>. In Andhra Pradesh, it is implemented as the <b>AP Resurvey Project</b> to provide <b>legal Ownership Certificates</b>.</p>
+      </div>
+      <div class="info">
+        <h2>🎯 Objectives</h2>
+        <ul>
+          <li>Create accurate property records</li>
+          <li>Issue property cards to rural households</li>
+          <li>Reduce disputes & promote financial stability</li>
+          <li>Enable access to institutional credit</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
-  <!-- Overview -->
-  <section>
-    <h2>📌 Overview</h2>
-    <p>
-      <b>SVAMITVA</b> is a Government of India initiative launched on <b>24th April 2020</b> to modernize rural property management.  
-      Using drone technology, surveys are conducted in rural habitations (Grama Kantams / Abadi) to provide integrated property solutions with Ownership Certificates.
-    </p>
-  </section>
+  <!-- Implementation + Benefits -->
+  <div class="section">
+    <div class="grid">
+      <div class="info">
+        <h2>🛠️ Implementation</h2>
+        <ul>
+          <li>Drone-based surveys in Grama Kantams</li>
+          <li>Preparation of Record of Rights (RoR)</li>
+          <li>Issuance of legal property certificates</li>
+          <li>Joint effort of Revenue Dept, Panchayati Raj & Survey of India</li>
+        </ul>
+      </div>
+      <div class="info">
+        <h2>🌟 Benefits</h2>
+        <ul>
+          <li>Proof of ownership for rural households</li>
+          <li>Collateral for loans & financial empowerment</li>
+          <li>Better planning with digital property maps</li>
+          <li>Transparency & improved governance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-  <!-- Objectives -->
-  <section>
-    <h2>🎯 Objectives</h2>
+  <!-- QGIS Plugin -->
+  <div class="section plugin">
+    <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:12px;">
+      <img src="Plugin_icon.png" alt="QGIS Plugin Icon" width="50" height="50">
+      <h2 style="margin:0; line-height:1.2;">SVAMITVA QGIS Plugin</h2>
+    </div>
+    
+    <p>The SVAMITVA QGIS Plugin empowers surveyors and Panchayat Raj officials to generate <b>Property Cards</b> and <b>Final Deliverable Maps</b> efficiently after survey and RoR processes.</p>
+    
+    <h3>🎯 Purpose</h3>
     <ul>
-      <li>Conduct accurate surveys of all rural habitations in Andhra Pradesh</li>
-      <li>Prepare the Record of Rights (RoR) for non-agricultural properties</li>
-      <li>Enable rural property owners to leverage property as financial assets</li>
-      <li>Support digital mapping and administrative planning</li>
+      <li>Automated Property Card generation</li>
+      <li>Village Habitation Traverse Map</li>
+      <li>Correlation Map</li>
+      <li>Property Parcel Map</li>
+      <li>Grama Kantam Map (old & extended boundaries)</li>
     </ul>
-  </section>
-
-  <!-- Implementation -->
-  <section>
-    <h2>🛠️ Implementation</h2>
+    
+    <h3>✨ Features</h3>
     <ul>
-      <li>Drone-based mapping for precision</li>
-      <li>Mapping of Grama Kantam lands and non-agricultural properties</li>
-      <li>Issuing ownership certificates integrating survey & RoR data</li>
-      <li>Adherence to AP Resurvey Project / SVAMITVA guidelines</li>
+      <li>Integrates RoR data & owner photos</li>
+      <li>Ensures official ready-to-use outputs</li>
+      <li>Reduces manual errors & saves time</li>
     </ul>
-  </section>
+    
+    <h3>📂 Official Use</h3>
+    <p>This plugin is a tool for the Andhra Pradesh Panchayat Raj Department, aiding in modernizing rural property mapping and administration under the SVAMITVA initiative.</p>
 
-  <!-- Benefits -->
-  <section>
-    <h2>🌟 Benefits</h2>
-    <ul>
-      <li>Official ownership proof to rural households</li>
-      <li>Properties usable as financial assets</li>
-      <li>Accurate digital maps for government & Panchayat Raj</li>
-      <li>Transparency and modern administration</li>
-    </ul>
-  </section>
-
-  <!-- Coverage -->
-  <section>
-    <h2>📍 Coverage</h2>
-    <p>
-      Focused on <b>Rural Andhra Pradesh</b>, covering all households and properties in Grama Kantams / Abadi,  
-      as part of the national initiative to digitally map rural India.
-    </p>
-  </section>
-
-  <!-- Contact -->
-  <div class="contact">
-    <h2>🙏 Thank You for Visiting</h2>
-    <p>For more details, reach out below:</p>
-    <div class="buttons">
-      <a class="btn" href="https://github.com/YourUsername/SVAMITVA" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54..."/></svg>
-        GitHub Project
-      </a>
-      <a class="btn" href="mailto:youremail@example.com">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1..."/></svg>
-        Contact via Email
+    <!-- Download Plugin Button -->
+    <div style="text-align:center; margin-top:20px;">
+      <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PramodKumar-SIDHU/SVAMITVA/tree/gh-pages/QGIS Plugin - Property Card generation and Final deliverables generation"
+        download
+        style="display:inline-block; background:#138808; color:#fff; padding:12px 22px; border-radius:30px; text-decoration:none; font-weight:600; transition:all 0.3s ease;">
+        <i class="fa-solid fa-download"></i> Download Plugin
       </a>
     </div>
   </div>
+
+
+  <!-- Final Section: Thanks + Links -->
+  <div class="final-section">
+    <div class="thanks-card">
+      <h2>🙏 Thank You</h2>
+      <p>This page is dedicated to <b>Project SVAMITVA in Andhra Pradesh</b>, aiming to empower rural citizens with technology-driven land governance.</p>
+    </div>
+
+    <div class="links">
+      <h3>🔗 Explore More</h3>
+      <div class="btns">
+        <a href="https://svamitva.nic.in/svamitva/" target="_blank" class="portal">
+          <i class="fa-solid fa-globe"></i> Central SVAMITVA Portal
+        </a>
+        <a href="https://github.com/PramodKumar-SIDHU/SVAMITVA" target="_blank" class="github">
+          <i class="fa-brands fa-github"></i> GitHub Project Page
+        </a>
+        <a href="https://youtube.com/@svamitvamithraap?feature=shared" target="_blank" class="youtube">
+          <i class="fa-brands fa-youtube"></i> SVAMITVA MITRA AP
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Animation -->
+  <script>
+    const infos = document.querySelectorAll('.info');
+    const pluginSection = document.querySelector('.plugin');
+    const thanksCard = document.querySelector('.thanks-card');
+
+    const reveal = () => {
+      infos.forEach(info => {
+        const rect = info.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 80) {
+          info.classList.add('visible');
+        }
+      });
+
+      const pluginRect = pluginSection.getBoundingClientRect();
+      if(pluginRect.top < window.innerHeight - 80) pluginSection.classList.add('visible');
+
+      const thanksRect = thanksCard.getBoundingClientRect();
+      if(thanksRect.top < window.innerHeight - 80) thanksCard.classList.add('visible');
+    };
+
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+  </script>
 </body>
 </html>
