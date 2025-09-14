@@ -15,50 +15,71 @@
       background: #f9f9f9;
       color: #222;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: #FF9933; /* Saffron */
-      color: #fff;
-      padding: 15px 40px;
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url("https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
       display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      font-weight: bold;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      text-align: center;
+      color: #fff;
+      position: relative;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.4rem;
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      animation: fadeInDown 1.5s ease forwards;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #FF9933; /* Saffron */
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+    .hero h2 {
+      font-size: 1.5rem;
+      color: #138808; /* Green */
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
 
+    /* Container */
     .container {
       max-width: 1000px;
-      margin: 100px auto 60px auto;
-      padding: 0 20px;
+      margin: auto;
+      padding: 60px 20px;
     }
 
     h2 {
-      color: #138808; /* Green */
+      color: #138808;
       margin-bottom: 10px;
     }
 
+    /* Cards */
     .card {
       background: #fff;
       border-radius: 12px;
       padding: 25px;
       margin: 25px 0;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-out;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     ul {
@@ -71,7 +92,6 @@
       font-weight: bold;
     }
 
-    /* Divider */
     hr {
       border: none;
       height: 2px;
@@ -79,7 +99,7 @@
       margin: 40px 0;
     }
 
-    /* Button */
+    /* GitHub button */
     .button {
       display: inline-flex;
       align-items: center;
@@ -101,35 +121,33 @@
       width: 20px;
       height: 20px;
       margin-right: 8px;
-      filter: invert(1); /* white GitHub logo */
+      filter: invert(1);
     }
 
-    /* Fade-in animation */
-    .fade-in {
-      opacity: 0;
-      animation: fadeInUp 1s forwards;
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>🏡 Project SVAMITVA</h1>
-  </header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>🏡 Project SVAMITVA</h1>
+      <h2>Survey of Villages Abadi and Mapping with Technology</h2>
+    </div>
+  </section>
 
   <!-- Content -->
   <div class="container">
-    <div class="card fade-in">
+    <div class="card">
       <h2>📌 Overview</h2>
-      <p><b>SVAMITVA</b> (Survey of Villages Abadi and Mapping with Improvised Technologies in Village Areas) is a flagship initiative of the Government of India.</p>
-      <p>Launched on <b>24th April 2020</b>, the project modernizes rural property management through <b>drone-based surveys</b> and provides <b>official Ownership Certificates</b> to property owners.</p>
+      <p><b>SVAMITVA</b> is a flagship initiative launched on <b>24th April 2020</b> to modernize rural property management through <b>drone-based surveys</b> and provide <b>official Ownership Certificates</b>.</p>
     </div>
 
-    <div class="card fade-in">
+    <div class="card">
       <h2>🎯 Objectives</h2>
       <ul>
         <li>Conduct accurate surveys of rural habitations</li>
@@ -139,7 +157,7 @@
       </ul>
     </div>
 
-    <div class="card fade-in">
+    <div class="card">
       <h2>🛠️ Implementation</h2>
       <ul>
         <li>Drone-based mapping for precision</li>
@@ -149,7 +167,7 @@
       </ul>
     </div>
 
-    <div class="card fade-in">
+    <div class="card">
       <h2>🌟 Benefits</h2>
       <ul>
         <li>Provides official ownership proof</li>
@@ -159,16 +177,30 @@
       </ul>
     </div>
 
-    <div class="card fade-in">
+    <div class="card">
       <h2>📍 Coverage</h2>
       <p>Focus: <b>Rural Andhra Pradesh</b> — all households & properties in Grama Kantams / Abadi.</p>
       <p>Part of the <b>national SVAMITVA program</b> mapping rural India.</p>
     </div>
 
-    <!-- GitHub Button -->
     <a href="https://github.com/PramodKumar-SIDHU/SVAMITVA" target="_blank" class="button">
       <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"> View Project on GitHub
     </a>
   </div>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const revealCards = () => {
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          card.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealCards);
+    revealCards();
+  </script>
 </body>
 </html>
