@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/plugins/SVAMITVA_Property_Card_Generator" >
-        <file>icon.png</file>
-    </qresource>
-</RCC>
